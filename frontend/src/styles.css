@@ -1,0 +1,31 @@
+body, html
+{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* body
+{
+    background: var(--primary-light); 
+    background: -webkit-linear-gradient(to top, var(--primary-dark), var(--primary-light));
+    background: linear-gradient(to top, var(--primary-dark), var(--primary-light));
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+} */
+
+*
+{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+:root
+{
+    --primary-light : #009ee8;
+    --primary-dark  : #294a76;
+    --light-gray    : #afafaf;
+    --gray          : #3c3c3c;
+    --dark-gray     : #1f1f21;
+}

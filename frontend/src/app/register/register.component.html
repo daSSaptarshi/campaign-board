@@ -1,0 +1,20 @@
+<div class="login_signup_container">
+    <div class="form_container">
+        <span>Register Yourself</span>
+        <div class="switch">
+            <span [ngClass]="isOrg?null:'selected'" (click)="chnangeRole(false)">As Individual</span>
+            <span [ngClass]="isOrg?'selected':null" (click)="chnangeRole(true)">As Organization</span>
+        </div>
+        <form class="form" [formGroup] = "registerForm" (ngSubmit)="onSubmitRegisterForm()">
+            <input type="text" name="name" id="" placeholder="Your Name" autocomplete="off" formControlName="name">
+            <input type="text" name="email" id="" placeholder="Your Email" autocomplete="off" formControlName="email">
+            <input type="text" name="address" id="" placeholder="Your Address" autocomplete="off"formControlName = "address">
+            <input *ngIf="isOrg" type="text" name="website" id="" placeholder="Website" formControlName="website">
+            <input type="text" name="phone" id="" placeholder="Phone Number" autocomplete="off" formControlName="phone">
+            <input type="password" name="password" id="" placeholder="Password" formControlName="password">
+            <!-- <input type="password" name="password" id="" placeholder="Confirm password"> -->
+            <button class="submit_form" [disabled]="!registerForm.valid"  >Sign Up</button>
+            <span routerLink="/login">Already have an account? Sign In</span>
+        </form>
+    </div>
+</div>

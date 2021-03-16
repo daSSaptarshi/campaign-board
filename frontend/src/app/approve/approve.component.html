@@ -1,0 +1,7 @@
+<navbar></navbar>
+<div class="container">
+    <span *ngIf="posts_data.length < 1">No post is waiting for apprval</span>
+    <app-post *ngFor="let post of posts_data" [post]="post" [forApproval]="true">
+            
+    </app-post>
+</div>

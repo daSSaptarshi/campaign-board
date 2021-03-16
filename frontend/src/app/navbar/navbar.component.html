@@ -1,0 +1,10 @@
+<div class="navbar">
+    <div class="branding">Campaign Board</div>
+    <div class="options">
+        <div class="links">
+            <span routerLink="/home" routerLinkActive="active" *ngIf="isAdmin == 'true'">Home</span>
+            <span routerLink="/approval" routerLinkActive="active" *ngIf="isAdmin == 'true'">Posts Pending For Approval</span>
+            <span (click)="signout()">Logout</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "towards-better",
+  "version": "1.0.0",
+  "description": "This platform is open to post about any social issue and connect to more people to take the issue to a good end",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd frontend && npm install",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daSSaptarshi/towards-better.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daSSaptarshi/towards-better/issues"
+  },
+  "homepage": "https://github.com/daSSaptarshi/towards-better#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.18",
+    "nodemon": "^2.0.7"
+  }
+}

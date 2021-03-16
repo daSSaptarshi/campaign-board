@@ -1,0 +1,51 @@
+<navbar></navbar>
+<div class="container">
+    
+    <!-- <div class="details_container">
+        <div class="profile_container">
+            <div class="profile_img" style="background-image: url('../../assets/images/profile_image.png');"></div>
+            <div class="profile_name">John Doe</div>
+            <div class="profile_details">
+
+            </div>
+        </div>
+
+        <div class="options">
+            <span>Your Campaigns</span>
+            <span>Your Advertisements</span>
+            <span>Your Comments</span>
+            <span>Log Out</span>
+        </div>
+    </div> -->
+
+    <div class="posts_container">
+        <app-post *ngFor="let post of posts_data" [post]="post">
+            
+        </app-post>
+    </div>
+
+    <form class="new_post_container" [formGroup] = "createPostForm" (ngSubmit)="onCreatePostFormSubmit()">
+        <div class="heading">
+            Create New Post
+        </div>
+        <input type="text" name="title" id="" placeholder="Title (maximum 200 character)" maxlength="200" formControlName="title">
+        <textarea name="body" id="" cols="30" rows="15" placeholder="Details" formControlName="content"></textarea>
+        <div class="button_container">
+            <!-- <div class="add_media">
+                <input type="file" name="" id="" #imageFile style="display: none;" accept="image/*">
+                <div class="add_iamge" (click)="imageFile.click()" >Add Image</div>
+                <input type="file" name="" id="" #videoFile style="display: none;" accept="video/*">
+                <div class="add_iamge" (click)="videoFile.click()" >Add Video</div>
+                
+            </div> -->
+            <div class="lead_button">
+               Mark As Advertisement &nbsp;
+                <label class="switch">  
+                    <input type="checkbox" formControlName="is_advertisement">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <button class="submit_post">Submit Post</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="post_card">
+    <div class="post_data">
+        <div class="ad_badge" *ngIf="post.is_advertisement">Advertisement</div>
+        <!-- <div class="profile_image" style="background-image: url('../../assets/images/profile_image.png');"></div> -->
+        <div>
+            <div>{{post.creater_details[0].name}}</div>
+            <div>{{post.timestamp.split("T")[0] | date: 'MMM dd, yyyy'}}</div>
+        </div>
+    </div>
+    <!-- <div class="post_heading">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div> -->
+    <div class="post_details">
+        <div class="post_title">{{post.title}}</div>
+        {{post.content}}
+    </div>
+    <div class="action_details" *ngIf="!forApproval">Currently, {{post.upvote}} people are volunteering this campaign</div>
+    <div class="post_actions" *ngIf="!forApproval">
+        <div (click)="upvote(post._id)">I'm willing to volunteer this campaign</div>
+        <div (click)="showComments()">{{showComment ? 'Hide Comments':'Show Comments'}}</div>
+    </div>
+
+    <div class="post_actions" *ngIf="forApproval">
+        <div (click)="approvePost()">Approve This Post</div>
+        <!-- <div (click)="showComments()">Remove</div> -->
+    </div>
+
+    <div class="comment_container" *ngIf="showComment"> 
+        <form class="comment_form" [formGroup]="commentForm"  (ngSubmit)="onCommentFormSubmit()">
+            <input type="text" name="comment" id="comment_input" placeholder="Your Comment" formControlName="content">
+            <button class="submit_comment">Add</button>
+        </form>
+        <span *ngIf="comments.length < 1">No comments available for this post</span>
+        <div class="comment" *ngFor="let comment of comments">
+            <div class="commenter_name">{{comment.creater_details[0]['name']}}</div>
+            <div class="comment_date">{{comment.timestamp | date : 'MMM dd, yyyy'}}</div>
+            <div class="content">{{comment.content}}</div>
+        </div>
+    </div>
+</div>

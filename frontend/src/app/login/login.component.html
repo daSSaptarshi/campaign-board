@@ -1,0 +1,12 @@
+<div class="login_signup_container">
+    <div class="form_container">
+        <span>Sign In</span>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
+            <input type="text" name="username" id="" placeholder="email" autocomplete="off" formControlName="email">
+            <input type="password" name="password" id="" placeholder="password" formControlName="password">
+            
+            <button class="submit_form" [disabled]="!loginForm.valid" >Sign In</button>
+            <span routerLink="/register">Don't Have An Account? Create New</span>
+        </form>
+    </div>
+</div>

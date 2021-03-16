@@ -1,0 +1,248 @@
+.container
+{
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    column-gap: 100px;
+    width: 90%;
+    left: 5%;
+    position: relative;
+    padding: 50px 0 30px 0;
+}
+
+.details_container
+{
+    width: 100%;
+    place-self: start;
+    position: sticky;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 40px);
+     box-shadow: 3px 3px 4px var(--light-gray);
+    border-radius: 5px;
+    border: 1px solid var(--primary-light);
+}   
+
+.options
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.options span
+{
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.details_container > div
+{
+    width: 100%;
+    padding: 20px;
+    /* box-shadow: 3px 3px 4px var(--light-gray);
+    border-radius: 5px;
+    border: 1px solid var(--primary-light); */
+    margin-bottom: 20px;
+    background: #ffffff;
+}
+
+.profile_container
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    height: calc(100vh - 40px);
+    
+}
+
+.profile_img
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--primary-light);
+    margin-bottom: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile_name
+{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--primary-light);
+}
+
+.heading
+{
+    font-size: 20px;
+    color: var(--primary-light);
+    /* border-bottom: 1px solid var(--light-gray); */
+    display: block;
+    padding-bottom: 20px;
+    /* margin-bottom: 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+.lead_button
+{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* ------------------------------- POST Container ------------------------------------ */
+
+.posts_container
+{
+    /* width: 100%; */
+    /* padding-right: 100px; */
+    /* border-right: 1px solid #afafaf; */
+    /* position: relative; */
+}
+
+.posts_container > div
+{
+    box-shadow: 3px 3px 4px var(--light-gray);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: #ffffff;
+    margin-bottom: 20px;
+}
+
+.new_post_container
+{
+    padding: 20px;
+    border-color: var(--primary-light) !important;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 4px var(--light-gray);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    /* align-self: flex-start; */
+    position: sticky;
+    top: 0;
+    align-self: start;
+}
+
+.new_post_container input,
+.new_post_container textarea
+{
+    border: 1px solid var(--light-gray);
+    margin-bottom: 15px;
+    padding: 10px 5px;
+    resize: none;
+    border-radius: 3px;
+}
+
+.new_post_container input
+{
+    padding: 14px 5px;
+}
+
+.new_post_container input:focus,
+.new_post_container textarea:focus
+{
+    border-color: var(--gray-light) !important;
+}
+/* ----------------------------- Toggle Switch -------------------------------- */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 9px;
+    width: 9px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--primary-light);
+  }
+  
+  /* input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  } */
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .button_container
+  {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .add_media
+  {
+      display: flex;
+  }
+  .add_media > div,
+  .submit_post
+  {
+    background: var(--primary-light);
+    border-radius: 3px;
+    padding: 7px 12px;
+    color: #ffffff;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+  }
+  .submit_post
+  {
+      margin-right: 0;
+  }
+
+  /* ----------------------------- Post card --------------------------------- */

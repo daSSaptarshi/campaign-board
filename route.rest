@@ -1,0 +1,84 @@
+POST    http://localhost:3000/profile/register
+Content-Type: application/json
+
+{
+    "name" : "Susmita Das",
+    "email": "admin@admin.admin",
+    "phone": "8017162433",
+    "password": "123456"
+}
+
+###
+
+POST    http://localhost:3000/profile/details
+Content-Type: application/json
+
+{
+    "id" : "6045498a3d7a743844b53138"
+}
+
+###
+
+POST    http://localhost:3000/profile/signin
+Content-Type: application/json
+
+{
+    "email": "susmita.das@gmailcom",
+    "password": "123456"
+}
+
+###
+
+POST    http://localhost:3000/post/create
+Content-Type: application/json
+
+{
+    "title" : "Dummy Post One",
+    "content" : "Dummy post content Two",
+    "user_id" : "604f7af8a3c1a53d4c62616e",
+    "is_advertisement" : false
+}
+
+###
+
+PATCH   http://localhost:3000/post/update
+Content-Type: application/json
+
+{
+    "id" : "604dfd588bc50b0ee4fffe7e",
+    "title" : "Dummy Post Three | Update Title | Update Two",
+    "content" : "Dummy post content Two | Updated Content | Another Update",
+    "user_id" : "6045498a3d7a743844b53138",
+    "is_advertisement" : false
+}
+
+###
+
+PATCH   http://localhost:3000/post/approve/604e0b1ad7a4c438441f6b6b
+
+###
+
+GET     http://localhost:3000/post/getAll
+
+###
+
+DELETE  http://localhost:3000/post/delete/604dc02948c2963438853ddc
+
+###
+
+PATCH   http://localhost:3000/post/upvote/604dc06048c2963438853dde
+
+###
+
+POST  http://localhost:3000/comment/add
+Content-Type: application/json
+
+{
+    "postId" : "604f9dbd4c1bd03b5c3e92a2",
+    "content" : "The .grid element is not stretching the body width.",
+    "creater" : "604f7af8a3c1a53d4c62616e"
+}
+
+###
+
+GET  http://localhost:3000/comment/getAll/604f9dbd4c1bd03b5c3e92a2
