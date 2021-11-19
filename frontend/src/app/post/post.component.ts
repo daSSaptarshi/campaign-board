@@ -43,7 +43,9 @@ export class PostComponent implements OnInit {
     .subscribe(
       data =>
       {
-        this.comments = data;
+        // console.log(data['comments'])
+        this.post["comments"] = data
+        // this.comments = data;
       }
     );
     }
@@ -56,11 +58,12 @@ export class PostComponent implements OnInit {
       {
         
       })
+
+      
   }
 
   onCommentFormSubmit()
   {
-    console.log("sdssdvs")
     this.commentForm.value["postId"] = this.post._id;
     this.commentForm.value["creater"] = sessionStorage.getItem("userId")
     this.commentService.addComment(this.commentForm.value)
@@ -68,6 +71,10 @@ export class PostComponent implements OnInit {
       data =>
       {
         this.post.is_approved = true
+        console.log(data)
+        // this.showComment = !this.showComment;
+        this.post["comments"] = data
+        this.commentForm.reset()
       }
     )
   }

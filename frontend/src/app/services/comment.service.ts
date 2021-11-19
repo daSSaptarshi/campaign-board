@@ -14,9 +14,10 @@ export class CommentService {
 
   httpService;
 
-  constructor(public httpservice : HttpClient ) {
+  constructor(public httpservice : HttpClient ) 
+  {
     this.httpService = httpservice;
-   }
+  }
 
   addComment(data)
   {
